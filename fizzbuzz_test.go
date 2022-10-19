@@ -13,3 +13,9 @@ type FizzBuzzSuite struct {
 func TestFizzBuzzSuite(t *testing.T) {
 	suite.Run(t, new(FizzBuzzSuite))
 }
+
+func (s *FizzBuzzSuite) TestOneUnchanged() {
+	r := Run([]int{1})
+
+	s.Equal([]string{"1"}, r)
+}
